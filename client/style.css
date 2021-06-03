@@ -1,0 +1,167 @@
+* {
+	--background_0: #AEEF;
+	--background_1: #EAEF;
+	--foreground_0: #EEE1;
+	--foreground_1: #FFF5;
+	--foreground_2: #FFF9;
+	--foreground_3: #FFFB;
+	--text: #133;
+	--hint: #566;
+	--border_0: #FFF3;
+	--border_1: #FFFA;
+}
+
+body {
+	z-index: 0;
+
+	display: flex;
+	background: linear-gradient(to right top, var(--background_0), var(--background_1));
+	color: var(--text);
+
+	font-family: 'Share Tech Mono', monospace;
+	
+	align-items: center;
+	justify-content: center;
+	
+	animation: start 500ms linear;
+}
+
+@keyframes start {
+	0% {
+		filter: blur(10px);
+	}
+	
+	100% {
+		filter: blur(0px);
+	}
+}
+
+#background {
+	z-index: 10;
+
+	position: absolute;
+	filter: blur(1px);
+
+	width: 100vw;
+	height: 100vh;
+}
+
+#content {
+	z-index: 20;
+
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(to right top, var(--foreground_0), var(--foreground_1));
+	backdrop-filter: blur(4px);
+	filter: drop-shadow(0.5vw 0.5vh 0.4rem #3663);
+
+	width: clamp(480px, 60vw, 1200px);
+	height: clamp(240px, 30vw, 600px);
+
+	align-items: center;
+	justify-content: center;
+
+	border: 1px solid var(--border_0);
+	border-radius: 1rem;
+
+	padding: 1rem;
+}
+
+#bar {
+	z-index: 30;
+
+	display: flex;
+	background: linear-gradient(to right top, var(--foreground_2), var(--foreground_3));
+	backdrop-filter: blur(8px);
+	filter: drop-shadow(0vw 0.2vh 0.2rem #3661);
+
+	font-size: max(2vw, 20px);
+	text-align: justify;
+	text-justify: inter-word;
+
+	width: 90%;
+	height: 10%;
+
+	align-items: center;
+
+	border: 1px solid var(--border_1);
+	border-radius: 1rem;
+	overflow: hidden;
+
+	padding: 0.5rem;
+	padding-left: 1.5rem;
+}
+
+#description {
+	z-index: 30;
+
+	display: flex;
+	position: relative;
+	color: var(--text);
+
+	font-size: max(1vw, 10px);
+
+	width: 90%;
+
+	top: 0.5rem;
+}
+
+#input {
+	z-index: 30;
+
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 40%;
+}
+#text {
+	z-index: 30;
+
+	position: relative;
+	background: linear-gradient(to right top, var(--foreground_2), var(--foreground_3));
+	backdrop-filter: blur(8px);
+	filter: drop-shadow(0.2vw 0.2vh 0.2rem #3661);
+	color: var(--text);
+
+	font-size: max(1.5vw, 15px);
+
+	width: 80%;
+	height: 80%;
+
+	border: 1px solid var(--border_1);
+	outline: none;
+	border-radius: 1rem;
+
+	padding: 1rem;
+	resize: none;
+}
+
+#text::placeholder {
+	color: var(--hint);
+}
+
+#emotion {
+	z-index: 30;
+
+	display: flex;
+	position: relative;
+	background: linear-gradient(to right top, var(--foreground_2), var(--foreground_3));
+	backdrop-filter: blur(8px);
+	filter: drop-shadow(0.2vw 0.2vh 0.2rem #3661);
+	color: var(--text);
+
+	font-size: max(3vw, 20px);
+
+	width: clamp(48px, 6vw, 120px);
+	height: clamp(48px, 6vw, 120px);
+
+	align-items: center;
+	justify-content: center;
+
+	margin: 1rem;
+
+	border-radius: 50%;
+}
